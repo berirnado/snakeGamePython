@@ -64,6 +64,12 @@ while True:
         snake_body.pop()
     apple_eaten = False
 
+    #check death
+    if not 0 <= snake_body[0][0] <= CELL_NUM - 1 or \
+       not 0 <= snake_body[0][1] <= CELL_NUM - 1 or \
+        snake_body[0] in snake_body[1:]:
+       break
+
 
     field.DrawRectangle((0,0),(FIELD_SIZE, FIELD_SIZE), 'black')
 
